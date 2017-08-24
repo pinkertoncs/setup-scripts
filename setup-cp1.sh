@@ -16,8 +16,9 @@ sudo apt update
 
 # install required debian packages
 
-sudo apt install -ys python3-tk
-sudo apt install -ys python3-matplotlib
+sudo apt install -y python3-tk
+sudo apt install -y python3-matplotlib
+sudo apt install -y python3-pip
 
 # install required python pip packages
 
@@ -27,16 +28,13 @@ pip3 install --user guizero
 
 pushd ~
 
-git clone https://github.com/acabey/cloud9-vnc.git
+git clone https://github.com/pinkertoncs/cloud9-vnc.git
 
 pushd cloud9-vnc
 
-sudo ./install.sh
+./install.sh
 
 echo alias c9vnc=/opt/c9vnc/c9vnc.sh >> ~/.bash_aliases
 
 popd
-
 popd
-
-#git clone https://github.com/pinkertoncs/cp1-workspace.git
