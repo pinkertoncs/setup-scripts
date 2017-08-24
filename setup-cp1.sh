@@ -26,15 +26,14 @@ pip3 install --user guizero
 
 # setup c9vnc
 
-pushd ~
-
-git clone https://github.com/pinkertoncs/cloud9-vnc.git
-
-pushd cloud9-vnc
-
-./install.sh
-
+# clone our forked cloud9 vnc repo
+git clone https://github.com/pinkertoncs/cloud9-vnc.git ~/cloud9-vnc
+cd ~/cloud9-vnc
+sudo ./install.sh
 echo alias c9vnc=/opt/c9vnc/c9vnc.sh >> ~/.bash_aliases
 
-popd
-popd
+# clone the computer programming 1 workspace
+git clone https://github.com/pinkertoncs/cp1-workspace.git ~/workspace/cp1-workspace
+
+# go home
+cd ~
