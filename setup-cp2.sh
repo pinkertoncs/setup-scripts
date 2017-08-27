@@ -2,26 +2,29 @@
 
 # ----------------------------------------------------------------------------
 #
-# Setup script for Pinkerton Academy Computer Programming 1 
+# Setup script for Pinkerton Academy Computer Programming 2
 # cloud 9 environment
-# 
+#
 # Author: M.B. Kulik
 # date: 08/2017
 #
 # ----------------------------------------------------------------------------
+
+# add oracle java ppa
+sudo add-apt-repository -y  ppa:webupd8team/java
 
 # update package repos
 sudo apt update
 
 # install required debian packages
 
-sudo apt install -y python3-tk
-sudo apt install -y python3-matplotlib
-sudo apt install -y python3-pip
+# setup quiet acceptance of oracle java license
+echo debconf shared/accepted-oracle-license-v1-1 select true | \
+  sudo debconf-set-selections
+echo debconf shared/accepted-oracle-license-v1-1 seen true | \
+  sudo debconf-set-selections
 
-# install required python pip packages
-
-pip3 install --user guizero
+sudo apt install -y oracle-java8-installer
 
 # setup c9vnc
 
@@ -35,12 +38,12 @@ then
 fi
 
 # clone the computer programming 1 workspace
-if [ ! -d "$HOME/workspace/cp1-workspace/" ]
+if [ ! -d "$HOME/workspace/cp2-workspace/" ]
 then
-    git clone https://github.com/pinkertoncs/cp1-workspace.git $HOME/workspace/cp1-workspace
+    git clone https://github.com/pinkertoncs/cp2-workspace.git $HOME/workspace/cp2-workspace
 
     # add alias for updatinng class sources
-    echo 'alias update-cp1=pushd $HOME/workspace/cp1-workspace;git pull;popd' >> $HOME/.bash_aliases    
+    echo 'alias update-cp2=pushd $HOME/workspace/cp2-workspace;git pull;popd' >> $HOME/.bash_aliases
 fi
 
 # go home
