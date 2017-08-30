@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # ----------------------------------------------------------------------------
 #
@@ -25,6 +25,18 @@ echo debconf shared/accepted-oracle-license-v1-1 seen true | \
   sudo debconf-set-selections
 
 sudo apt install -y oracle-java8-installer
+
+
+# install required java libs
+if [ ! -d "$HOME/lib/" ]
+then
+  mkdir $HOME/lib
+fi
+
+pushd $HOME/lib
+wget http://central.maven.org/maven2/junit/junit/4.12/junit-4.12.jar
+wget http://central.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+popd
 
 # setup c9vnc
 
