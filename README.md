@@ -8,7 +8,8 @@
 2. Download & Run setup script
 
     ```bash
-    curl https://raw.githubusercontent.com/pinkertoncs/setup-scripts/master/setup-cp1.sh | bash
+    wget https://raw.githubusercontent.com/pinkertoncs/setup-scripts/master/setup-cp1.sh
+    bash setup-cp1.sh
     ```
 
 ## Computer Programming 2 / APCS A
@@ -19,7 +20,8 @@
 2. Download setup script
 
     ```bash
-    curl https://raw.githubusercontent.com/pinkertoncs/setup-scripts/master/setup-cp2.sh | bash
+    wget https://raw.githubusercontent.com/pinkertoncs/setup-scripts/master/setup-cp2.sh
+    bash setup-cp2.sh
     ```
 
 ## Keeping up to date
