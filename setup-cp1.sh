@@ -40,7 +40,7 @@ then
     git clone https://github.com/pinkertoncs/cp1-workspace.git $HOME/workspace/cp1-workspace
 
     # add alias for updatinng class sources
-    echo 'alias update-cp1=pushd $HOME/workspace/cp1-workspace;git pull;popd' >> $HOME/.bash_aliases    
+    echo 'alias update-cp1="pushd $HOME/workspace/cp1-workspace;git pull;popd"' >> $HOME/.bash_aliases    
 fi
 
 # go home
